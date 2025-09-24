@@ -1,0 +1,33 @@
+.albumPage {
+  padding: 20px;
+}
+
+.albumHeader {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.albumImage {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.songsSection {
+  margin-top: 20px;
+}
+
+.songsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.notFound {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 20px;
+  color: gray;
+}

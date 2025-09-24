@@ -1,0 +1,59 @@
+:root {
+  --color-black: #121212;
+  --color-white: #ffffff;
+  --color-green: #1ed760;
+  --color-primary: #282828;
+}
+
+/* Global reset */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Scrollbar styling for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-green);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-primary);
+}
+
+/* Headings and paragraphs */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Material UI overrides */
+.MuiTooltip-tooltip {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+}
+
+.MuiChip-root {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Optional global container */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

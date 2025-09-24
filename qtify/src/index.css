@@ -1,0 +1,68 @@
+/* Global reset and dark theme */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #121212; /* QTify dark background */
+  color: #ffffff; /* White text */
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings and paragraphs */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Lists */
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Scrollbar styling for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #1ed760; /* QTify green */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #282828; /* QTify primary dark */
+}
+
+/* Material UI overrides */
+.MuiTooltip-tooltip {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+}
+
+.MuiChip-root {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Swiper/Carousel global styling */
+.swiper {
+  padding: 10px 0;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

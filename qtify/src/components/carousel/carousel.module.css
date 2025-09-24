@@ -1,0 +1,26 @@
+.carouselWrapper {
+  position: relative;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  top: 40%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-button-prev {
+  left: -20px;
+}
+
+.swiper-button-next {
+  right: -20px;
+}

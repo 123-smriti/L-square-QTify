@@ -1,0 +1,37 @@
+/* section.module.css */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0 10px 0;
+}
+
+.toggleText {
+  font-size: 14px;
+  cursor: pointer;
+  color: var(--color-green);
+}
+
+.filterWrapper {
+  margin-bottom: 15px;
+}
+
+.cardsWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.tabs {
+  min-height: 40px;
+  .MuiTab-root {
+    color: var(--color-white);
+    font-family: "Poppins", sans-serif;
+  }
+}
