@@ -75,19 +75,8 @@ QTify/
 └── README.md
 ```
 
-## ⚙️ Getting Started
 
-Follow these steps to run QTify locally.
 
-### Prerequisites
-
-Make sure you have installed:
-
-- [Node.js](https://nodejs.org/) (LTS recommended)
-- npm
-- Git
-
-### Installation
 
 **1. Clone the repository**
 
@@ -135,46 +124,6 @@ The production-ready files will be generated inside the `build/` directory.
 
 QTify frontend can be deployed using [Vercel](https://vercel.com/).
 
-### Deployment Steps
-
-1. Push your project to GitHub.
-2. Log in to Vercel.
-3. Import your GitHub repository.
-4. Select the project root directory.
-5. Choose **Create React App** as the framework preset.
-6. Configure the following build settings:
-
-| Setting | Value |
-|---|---|
-| Build Command | `npm run build` |
-| Output Directory | `build` |
-| Install Command | `npm install` |
-
-7. Click **Deploy**.
-
-The `vercel.json` configuration supports React Router navigation and direct access to application routes.
-
-## 🔌 API Integration
-
-QTify uses the Crio QTify backend API to retrieve music-related data.
-
-**Base URL:** https://qtify-backend-labs.crio.do
-
-| Feature | API Endpoint |
-|---|---|
-| Top Albums | `/albums/top` |
-| New Albums | `/albums/new` |
-| Songs | `/songs` |
-| Genres | `/genres` |
-
-## 🔮 Future Improvements
-
-- Add audio playback functionality.
-- Implement playlist creation and management.
-- Introduce user authentication and personalized libraries.
-- Improve search with advanced filtering and sorting.
-- Add favorites and recently played tracks.
-- Enhance loading, error, and empty states.
 
 ## 👩‍💻 Author
 
