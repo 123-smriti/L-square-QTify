@@ -1,23 +1,42 @@
 import React from "react";
-import Hero from "../../components/Hero/Hero";
-import Section from "../../components/Section/Section";
+import Hero from "../../components/hero/hero";
+import Section from "../../components/section/section";
 import { useOutletContext } from "react-router-dom";
+import styles from "./homepage.module.css";
 
 function Homepage() {
   // data comes from App.js via Outlet context
   const {
     data: { topAlbums, newAlbums, songs, genres },
+    errors = {},
+    usingFallback = false,
+    isLoading = false,
+    retryCatalog,
   } = useOutletContext();
 
   return (
-    <div>
+    <main className={styles.homepage}>
       <Hero />
+      {usingFallback && (
+        <p className={styles.dataNotice} role="status">
+          The live catalog is unavailable, so sample music is shown.
+          <button
+            type="button"
+            className={styles.retryButton}
+            onClick={retryCatalog}
+            disabled={isLoading}
+          >
+            {isLoading ? "Retrying..." : "Retry"}
+          </button>
+        </p>
+      )}
 
       {/* Top Albums Section */}
       <Section
         title="Top Albums"
         data={topAlbums}
         type="album"
+        error={errors.topAlbums}
       />
 
       {/* New Albums Section */}
@@ -25,6 +44,7 @@ function Homepage() {
         title="New Albums"
         data={newAlbums}
         type="album"
+        error={errors.newAlbums}
       />
 
       {/* Songs Section */}
@@ -32,10 +52,11 @@ function Homepage() {
         title="Songs"
         data={songs}
         type="song"
-        filterSource={async () => ({ data: genres })}
+        genres={genres}
         isSongs={true}
+        error={errors.songs}
       />
-    </div>
+    </main>
   );
 }
 

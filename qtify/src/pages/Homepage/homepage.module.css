@@ -5,3 +5,31 @@
 .songsSection {
   margin-top: 40px;
 }
+
+.dataNotice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0 0 16px;
+  padding: 10px 14px;
+  border: 1px solid var(--color-green);
+  border-radius: 8px;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+.retryButton {
+  flex: 0 0 auto;
+  border: 0;
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: var(--color-black);
+  background-color: var(--color-green);
+  cursor: pointer;
+}
+
+.retryButton:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}

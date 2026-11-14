@@ -1,8 +1,8 @@
 /*import React, { useEffect, useState } from "react";
 import { CircularProgress } from "@mui/material";
-import Card from "../card/Card";
-import Carousel from "../carousel/Carousel";
-import Filters from "../filters/Filters";
+import Card from "../card/card";
+import Carousel from "../carousel/carousel";
+import Filters from "../filters/filters";
 import styles from "../section.module.css";
 
 export default function Section({ title, data, filterSource, type }) {
@@ -72,59 +72,38 @@ export default function Section({ title, data, filterSource, type }) {
   );
 }*/
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { CircularProgress, Tabs, Tab } from "@mui/material";
-import Carousel from "../Carousel/Carousel";
-import Filters from "../Filters/Filters";
-import Card from "../Card/Card";
-import styles from "./Section.module.css";
+import Carousel from "../carousel/carousel";
+import Card from "../card/card";
+import styles from "./section.module.css";
 
-function Section({ title, data, type, filterSource, isSongs = false }) {
-  const [filters, setFilters] = useState([{ key: "all", label: "All" }]);
-  const [selectedFilterIndex, setSelectedFilterIndex] = useState(0);
+function Section({ title, data = [], type, genres = [], isSongs = false, error }) {
   const [carouselToggle, setCarouselToggle] = useState(true);
-
-  // For songs tab selection
   const [selectedGenre, setSelectedGenre] = useState("all");
-
-  const handleToggle = () => {
-    setCarouselToggle((prev) => !prev);
-  };
-
-  useEffect(() => {
-    if (filterSource) {
-      filterSource().then((response) => {
-        const { data } = response;
-        setFilters([{ key: "all", label: "All" }, ...data]);
-      });
-    }
-  }, []);
-
-  // filter data for songs or albums
-  const filteredData = data.filter((item) => {
-    if (isSongs) {
-      return selectedGenre === "all" || item.genre.key === selectedGenre;
-    } else {
-      return filters.length > 1 && selectedFilterIndex !== 0
-        ? item.genre?.key === filters[selectedFilterIndex].key
-        : item;
-    }
-  });
+  const filters = [{ key: "all", label: "All" }, ...genres];
+  const filteredData =
+    isSongs && selectedGenre !== "all"
+      ? data.filter((item) => item.genre?.key === selectedGenre)
+      : data;
 
   return (
-    <div className={styles.sectionWrapper}>
+    <section className={styles.section}>
       <div className={styles.header}>
         <h3>{title}</h3>
 
         {!isSongs && (
-          <h4 className={styles.toggleText} onClick={handleToggle}>
+          <button
+            type="button"
+            className={styles.toggleText}
+            onClick={() => setCarouselToggle((previous) => !previous)}
+          >
             {carouselToggle ? "Show All" : "Collapse"}
-          </h4>
+          </button>
         )}
       </div>
 
-      {/* Songs Tabs */}
-      {isSongs ? (
+      {isSongs && (
         <Tabs
           value={selectedGenre}
           onChange={(e, newValue) => setSelectedGenre(newValue)}
@@ -139,19 +118,11 @@ function Section({ title, data, type, filterSource, isSongs = false }) {
             />
           ))}
         </Tabs>
-      ) : (
-        filters.length > 1 && (
-          <div className={styles.filterWrapper}>
-            <Filters
-              filters={filters}
-              selectedFilterIndex={selectedFilterIndex}
-              setSelectedFilterIndex={setSelectedFilterIndex}
-            />
-          </div>
-        )
       )}
 
-      {data.length === 0 ? (
+      {filteredData.length === 0 && error ? (
+        <p role="status">{error}</p>
+      ) : filteredData.length === 0 ? (
         <CircularProgress />
       ) : (
         <div className={styles.cardsWrapper}>
@@ -168,7 +139,7 @@ function Section({ title, data, type, filterSource, isSongs = false }) {
           )}
         </div>
       )}
-    </div>
+    </section>
   );
 }
 

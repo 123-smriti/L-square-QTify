@@ -1,8 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useOutletContext } from "react-router-dom";
-import Card from "../../components/Card/Card";
-import styles from "./Albumpage.module.css";
+import Card from "../../components/card/card";
+import styles from "./albumpage.module.css";
 
 function Albumpage() {
   const { albumId } = useParams();
@@ -13,7 +13,7 @@ function Albumpage() {
   } = useOutletContext();
 
   const allAlbums = [...topAlbums, ...newAlbums];
-  const album = allAlbums.find((a) => a.id === albumId || a.slug === albumId);
+  const album = allAlbums.find((a) => String(a.id) === String(albumId) || a.slug === albumId);
 
   if (!album) {
     return <p className={styles.notFound}>Album not found</p>;
@@ -37,7 +37,7 @@ function Albumpage() {
       <div className={styles.songsSection}>
         <h3>Songs</h3>
         <div className={styles.songsGrid}>
-          {album.songs.map((song) => (
+          {(album.songs || []).map((song) => (
             <Card key={song.id} data={song} type="song" />
           ))}
         </div>

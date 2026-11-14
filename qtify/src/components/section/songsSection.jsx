@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
-import Section from "../Section/Section";
-import Carousel from "../Carousel/Carousel";
+import Section from "../section/section";
+import Carousel from "../carousel/carousel";
 import { Tab, Tabs } from "@mui/material";
-import styles from "./SongsSection.module.css";
+import styles from "./songsSection.module.css";
 
 export default function SongsSection() {
   const {

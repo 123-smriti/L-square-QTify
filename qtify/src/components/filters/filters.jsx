@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Tabs, Tab } from "@mui/material";
-import styles from "./Filter.module.css";
-import Carousel from "../Carousel/Carousel";
-import Card from "../Card/Card";
+import styles from "./filter.module.css";
+import Carousel from "../carousel/carousel";
+import Card from "../card/card";
 
 function Filter({ songs = [], genres = [] }) {
   // By default, "All" is selected

@@ -3,8 +3,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import Card from "../Card/Card";
-import styles from "./Carousel.module.css";
+import Card from "../card/card";
+import styles from "./carousel.module.css";
 
 function Carousel({ data, type }) {
   return (

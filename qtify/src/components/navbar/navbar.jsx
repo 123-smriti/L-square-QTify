@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Button from "../Button/Button";
-import Logo from "../Logo/Logo";
-import Search from "../Search/Search";
-import styles from "./Navbar.module.css";
+import Button from "../button/button";
+import Logo from "../logo/logo";
+import Search from "../search/search";
+import styles from "./navbar.module.css";
 
 function Navbar({ searchData }) {
   return (
@@ -20,7 +20,7 @@ function Navbar({ searchData }) {
       />
 
       {/* Feedback button on the right */}
-      <Button text="Give Feedback" />
+      <Button>Give Feedback</Button>
     </nav>
   );
 }

@@ -2,7 +2,7 @@
 import React from "react";
 import { Chip, Tooltip } from "@mui/material";
 import { Link } from "react-router-dom";
-import styles from "./Card.module.css";
+import styles from "./card.module.css";
 
 function Card({ data, type }) {
   const getCard = (type) => {
