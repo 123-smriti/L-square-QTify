@@ -4,7 +4,7 @@ A React-based music discovery platform that lets users explore albums, browse so
 
 ## 🌐 Live Demo
 
-live: [QTify](https://qtify-backend-labs.crio.do)
+live: [QTify](https://l-square-q-tify-six-chi.vercel.app/)
 
 ## 📌 Overview
 
@@ -122,7 +122,7 @@ The production-ready files will be generated inside the `build/` directory.
 
 ## 🚀 Deployment
 
-QTify frontend can be deployed using [Vercel](https://vercel.com/).
+QTify frontend can be deployed using [Vercel](https://vercel.com/)-https://l-square-q-tify-six-chi.vercel.app/
 
 
 
